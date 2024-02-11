@@ -22,7 +22,6 @@ We will mint basic CharacterData for sample RPG Character NFT.
 
 #### NFT Management
 -   **`mint(to: Principal, metadata: MetadataDesc, blob_content: Vec<u8>)`**: Mints a new NFT.
--   
 #### NFT Transfer
 -   **`transfer_from(from: Principal, to: Principal, token_id: u64)`**: Transfers an NFT from one principal to another.
 -   **`safe_transfer_from(from: Principal, to: Principal, token_id: u64)`**: Safely transfers an NFT, checking for zero addresses.
