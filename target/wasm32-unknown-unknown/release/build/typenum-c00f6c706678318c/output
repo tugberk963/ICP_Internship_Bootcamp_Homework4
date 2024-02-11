@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/tugberk/dip721-nft-container/target/wasm32-unknown-unknown/release/build/typenum-c00f6c706678318c/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/tugberk/dip721-nft-container/target/wasm32-unknown-unknown/release/build/typenum-c00f6c706678318c/out/op.rs

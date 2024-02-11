@@ -1,0 +1,1 @@
+/home/tugberk/dip721-nft-container/target/wasm32-unknown-unknown/release/dip721_nft_container.wasm: /home/tugberk/dip721-nft-container/build.rs /home/tugberk/dip721-nft-container/src/http.rs /home/tugberk/dip721-nft-container/src/lib.rs /home/tugberk/dip721-nft-container/src/types.rs

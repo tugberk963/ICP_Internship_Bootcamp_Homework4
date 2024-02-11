@@ -1,0 +1,96 @@
+type ApiError = variant { ZeroAddress; InvalidTokenId; Unauthorized; Other };
+type BurnRequest = record { token_id : nat64 };
+type ExtendedMetadataResult = record {
+  token_id : nat64;
+  metadata_desc : MetadataDesc;
+};
+type HttpRequest = record {
+  url : text;
+  method : text;
+  body : vec nat8;
+  headers : vec record { text; text };
+};
+type HttpResponse = record {
+  body : vec nat8;
+  headers : vec record { text; text };
+  status_code : nat16;
+};
+type InitArgs = record {
+  logo : opt LogoResult;
+  name : text;
+  custodians : opt vec principal;
+  symbol : text;
+};
+type InterfaceId = variant {
+  Burn;
+  Mint;
+  Approval;
+  TransactionHistory;
+  TransferNotification;
+};
+type LogoResult = record { data : text; logo_type : text };
+type ManageResult = variant { Ok; Err : ApiError };
+type MetadataDesc = vec MetadataPart;
+type MetadataKeyVal = record { text; MetadataVal };
+type MetadataPart = record {
+  data : vec nat8;
+  key_val_data : vec MetadataKeyVal;
+  purpose : MetadataPurpose;
+};
+type MetadataPurpose = variant { Preview; Rendered };
+type MetadataResult = variant { Ok : MetadataDesc; Err : ApiError };
+type MetadataVal = variant {
+  Nat64Content : nat64;
+  Nat32Content : nat32;
+  Nat8Content : nat8;
+  NatContent : nat;
+  Nat16Content : nat16;
+  BlobContent : vec nat8;
+  TextContent : text;
+};
+type MintReceipt = variant {
+  Ok : record { id : nat; token_id : nat64 };
+  Err : variant { Unauthorized };
+};
+type OwnerResult = variant { Ok : principal; Err : ApiError };
+type TransactionType = variant {
+  Approve : record { to : principal; token_id : nat64; from : principal };
+  Burn : record { token_id : nat64 };
+  Mint : record { token_id : nat64 };
+  SetApprovalForAll : record { to : principal; from : principal };
+  Transfer : record { to : principal; token_id : nat64; from : principal };
+  TransferFrom : record { to : principal; token_id : nat64; from : principal };
+};
+type TxReceipt = variant { Ok : nat; Err : ApiError };
+type TxResult = record { fee : nat; transaction_type : TransactionType };
+service : {
+  approveDip721 : (principal, nat64) -> (TxReceipt);
+  balanceOfDip721 : (principal) -> (nat64) query;
+  burnDip721 : (nat64) -> (TxReceipt);
+  getApprovedDip721 : (nat64) -> (TxReceipt) query;
+  getMetadataDip721 : (nat64) -> (MetadataResult) query;
+  getMetdataForUserDip721 : (principal) -> (vec ExtendedMetadataResult);
+  http_request : (HttpRequest) -> (HttpResponse) query;
+  isApprovedForAllDip721 : (principal) -> (bool) query;
+  is_custodian : (principal) -> (bool) query;
+  logoDip721 : () -> (LogoResult) query;
+  mintDip721 : (principal, MetadataDesc, vec nat8) -> (MintReceipt);
+  nameDip721 : () -> (text) query;
+  ownerOfDip721 : (nat64) -> (OwnerResult) query;
+  safeTransferFromDip721 : (principal, principal, nat64) -> (TxReceipt);
+  safeTransferFromNotifyDip721 : (principal, principal, nat64, vec nat8) -> (
+      TxReceipt,
+    );
+  setApprovalForAllDip721 : (principal, bool) -> (TxReceipt);
+  set_custodian : (principal, bool) -> (ManageResult);
+  set_logo : (opt LogoResult) -> (ManageResult);
+  set_name : (text) -> (ManageResult);
+  set_symbol : (text) -> (ManageResult);
+  supportedInterfacesDip721 : () -> (vec InterfaceId) query;
+  symbolDip721 : () -> (text) query;
+  totalSupplyDip721 : () -> (nat64) query;
+  transferFromDip721 : (principal, principal, nat64) -> (TxReceipt);
+  transferFromNotifyDip721 : (principal, principal, nat64, vec nat8) -> (
+      TxReceipt,
+    );
+}
