@@ -5,7 +5,7 @@ This example demonstrates implementing an NFT canister.
 
 The canister is a basic implementation of the standard.
 
-We will mint basic CharacterData for sample RPG Character NFT.
+We will mint basic sample RPG Character NFT.
 
 ### 1. Installation
 
