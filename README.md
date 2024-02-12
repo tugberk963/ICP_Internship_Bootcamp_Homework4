@@ -86,6 +86,7 @@ dfx deploy --argument \
     custodians = opt vec { principal \"$(dfx identity get-principal)\" };
 })"
 ```
+<img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/deployment.gif">
 
 ## Minting NFT with Desired Metadata
 
@@ -123,6 +124,8 @@ If output looks like below, our minting process is done. Now lets see the change
 ```bash
 (variant { Ok = record { id = 0 : nat; token_id = 0 : nat64 } })
 ```
+<img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/minting.gif">
+
 ## Getting Metadata 
 With the following command, we can see our NFT's metadata.
 ```bash
@@ -149,5 +152,5 @@ Output will look like below :
   },
 )
 ```
-
+<img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/checkingmetada.gif">
 
