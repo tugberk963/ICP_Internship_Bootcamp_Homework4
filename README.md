@@ -129,5 +129,25 @@ With the following command, we can see our NFT's metadata.
 dfx canister call dip721_nft_container getMetadataDip721 '(0:nat64)'
 ```
 '(our_nft_id: nat64)'
-
+Output will look like below : 
+```bash
+(
+  variant {
+    Ok = vec {
+      record {
+        data = blob "hello";
+        key_val_data = vec {
+          record { "characterClass"; variant { TextContent = "Warrior" } };
+          record {
+            "characterName";
+            variant { TextContent = "DesiredCharacterName" };
+          };
+          record { "characterLevel"; variant { Nat8Content = 99 : nat8 } };
+        };
+        purpose = variant { Rendered };
+      };
+    }
+  },
+```
+)
 
