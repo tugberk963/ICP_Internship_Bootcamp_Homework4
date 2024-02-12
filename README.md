@@ -13,38 +13,7 @@ We will mint basic sample RPG Character NFT.
 -   [x] Download and install [git.](https://git-scm.com/downloads)
 -   [x] `wasm32-unknown-unknown` targets; these can be installed with `rustup target add wasm32-unknown-unknown`.
 
-### 2. Functionality 
-
-#### Initialization and Upgrade
--   **`init(args: InitArgs)`**: Initializes the canister with given arguments.
--   **`pre_upgrade()`**: Prepares and serializes the canister's state before an upgrade.
--   **`post_upgrade()`**: Restores the canister's state after an upgrade.
-
-#### NFT Management
--   **`mint(to: Principal, metadata: MetadataDesc, blob_content: Vec<u8>)`**: Mints a new NFT.
-#### NFT Transfer
--   **`transfer_from(from: Principal, to: Principal, token_id: u64)`**: Transfers an NFT from one principal to another.
--   **`safe_transfer_from(from: Principal, to: Principal, token_id: u64)`**: Safely transfers an NFT, checking for zero addresses.
--   **`transfer_from_notify(from: Principal, to: Principal, token_id: u64, data: Vec<u8>)`**: Transfers an NFT and notifies the recipient.
--   **`safe_transfer_from_notify(from: Principal, to: Principal, token_id: u64, data: Vec<u8>)`**: Safely transfers an NFT with notification.
-  
-#### Query Functions
--   **`balance_of(user: Principal)`**: Returns the number of NFTs owned by a user.
--   **`owner_of(token_id: u64)`**: Returns the owner of a specific NFT.
--   **`name()`**: Returns the name of the NFT collection.
--   **`symbol()`**: Returns the symbol of the NFT collection.
--   **`total_supply()`**: Returns the total number of NFTs minted.
--   **`supported_interfaces()`**: Lists the supported interfaces (DIP721 standards).
--   **`get_metadata(token_id: u64)`**: Retrieves metadata for a specific NFT.
--   **`get_metadata_for_user(user: Principal)`**: Retrieves metadata for all NFTs owned by a user.
--   **`is_principal_member(user: Principal)`**: Returns if user is a member (this is for example implementation).
-   
-#### Customization Functions
--   **`set_name(name: String)`**: Sets the name of the NFT collection.
--   **`set_symbol(sym: String)`**: Sets the symbol of the NFT collection.
--   **`set_logo(logo: Option<LogoResult>)`**: Sets the logo for the NFT collection.
-
-### 3.Testing Process
+### 2.Testing Process
 
 #### Starting
 Be sure our project have required node modules.
@@ -154,3 +123,33 @@ Output will look like below :
 ```
 <img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/checking%20metadata.gif">
 
+### 3. Functionalities 
+
+#### Initialization and Upgrade
+-   **`init(args: InitArgs)`**: Initializes the canister with given arguments.
+-   **`pre_upgrade()`**: Prepares and serializes the canister's state before an upgrade.
+-   **`post_upgrade()`**: Restores the canister's state after an upgrade.
+
+#### NFT Management
+-   **`mint(to: Principal, metadata: MetadataDesc, blob_content: Vec<u8>)`**: Mints a new NFT.
+#### NFT Transfer
+-   **`transfer_from(from: Principal, to: Principal, token_id: u64)`**: Transfers an NFT from one principal to another.
+-   **`safe_transfer_from(from: Principal, to: Principal, token_id: u64)`**: Safely transfers an NFT, checking for zero addresses.
+-   **`transfer_from_notify(from: Principal, to: Principal, token_id: u64, data: Vec<u8>)`**: Transfers an NFT and notifies the recipient.
+-   **`safe_transfer_from_notify(from: Principal, to: Principal, token_id: u64, data: Vec<u8>)`**: Safely transfers an NFT with notification.
+  
+#### Query Functions
+-   **`balance_of(user: Principal)`**: Returns the number of NFTs owned by a user.
+-   **`owner_of(token_id: u64)`**: Returns the owner of a specific NFT.
+-   **`name()`**: Returns the name of the NFT collection.
+-   **`symbol()`**: Returns the symbol of the NFT collection.
+-   **`total_supply()`**: Returns the total number of NFTs minted.
+-   **`supported_interfaces()`**: Lists the supported interfaces (DIP721 standards).
+-   **`get_metadata(token_id: u64)`**: Retrieves metadata for a specific NFT.
+-   **`get_metadata_for_user(user: Principal)`**: Retrieves metadata for all NFTs owned by a user.
+-   **`is_principal_member(user: Principal)`**: Returns if user is a member (this is for example implementation).
+   
+#### Customization Functions
+-   **`set_name(name: String)`**: Sets the name of the NFT collection.
+-   **`set_symbol(sym: String)`**: Sets the symbol of the NFT collection.
+-   **`set_logo(logo: Option<LogoResult>)`**: Sets the logo for the NFT collection.
