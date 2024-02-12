@@ -128,7 +128,6 @@ With the following command, we can see our NFT's metadata.
 ```bash
 dfx canister call dip721_nft_container getMetadataDip721 '(0:nat64)'
 ```
-'(our_nft_id: nat64)'
 Output will look like below : 
 ```bash
 (
@@ -148,6 +147,7 @@ Output will look like below :
       };
     }
   },
-```
 )
+```
+
 
