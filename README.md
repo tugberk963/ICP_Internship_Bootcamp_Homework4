@@ -152,5 +152,5 @@ Output will look like below :
   },
 )
 ```
-<img src="[https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/checkingmetada.gif](https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/checking%20metadata.gif)https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/checking%20metadata.gif">
+<img src="https://github.com/tugberk963/ICP_Internship_Bootcamp_Homework4/blob/master/checking%20metadata.gif">
 
